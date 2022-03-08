@@ -1,0 +1,38 @@
+.Sidebar{
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    min-width: 10%;
+    background-size:contain;
+    background-color: rgba(0, 0, 0, 0.87);
+    color: white;
+    overflow: auto;
+}
+.Sidebar > *{
+    margin-left:1.5rem;
+}
+.Sidebar h2{
+    margin-top:2rem;
+}
+.Sidebar ul{
+    margin-top: 2rem;
+    list-style: none;
+    list-style-type: none;
+}
+.Sidebar li{
+    margin-top:1.5rem;
+    cursor:pointer;
+}
+.Sidebar li:hover{
+    color: rgba(0, 0, 0, 0.466);
+}
+.Sidebar{
+    flex-wrap: wrap;
+    overflow: scroll;
+}
+.Sidebar{
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.Sidebar::-webkit-scrollbar{
+    display: none;
+}

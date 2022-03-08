@@ -1,0 +1,24 @@
+.Moviecard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(2, 0, 0);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.562);
+    border-radius: 1rem;
+    width: 13em;
+    height: 16em;
+    margin:2rem 2rem  1rem 2rem;
+    overflow: scroll;
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+}
+.Moviecard img{
+    width:13rem;
+    height: 13rem;
+    border: 0.1rem solid white;
+}
+.Moviecard::-webkit-scrollbar{
+    display: none;
+}
