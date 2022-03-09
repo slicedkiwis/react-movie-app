@@ -1,23 +1,31 @@
+:root{
+    --main-color:#DFFDFF;
+    --secondary-color:#E5E1EE;
+    --main-bg-color:#335C67;
+    --ui-main-color:#68EDC6;
+    --ui-secondary-color:#90F3FF;
+    --card-width:10rem;
+    --card-height:15rem;
+}
 .Moviecard{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(2, 0, 0);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.26);
+    color: var(--secondary-color);
     font-family: 'Courier New', Courier, monospace;
-    box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.562);
-    border-radius: 1rem;
-    width: 13em;
-    height: 16em;
+    box-shadow:0rem 2rem 2rem rgba(0, 0, 0, 0.192);
+    border-radius: 0.4rem;
+    width:var(--card-width);
+    height: var(--card-height);
     margin:2rem 2rem  1rem 2rem;
     overflow: scroll;
     -ms-overflow-style:none;
     scrollbar-width: none;
 }
 .Moviecard img{
-    width:13rem;
-    height: 13rem;
-    border: 0.1rem solid white;
+    width:var(--card-width);
+    height: var(--card-height);
 }
 .Moviecard::-webkit-scrollbar{
     display: none;

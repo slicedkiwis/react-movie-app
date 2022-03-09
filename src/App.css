@@ -1,3 +1,11 @@
+:root{
+    --main-color:#DFFDFF;
+    --secondary-color:#E5E1EE;
+    --main-bg-color:#335C67;
+    --ui-main-color:#68EDC6;
+    --ui-secondary-color:#90F3FF;
+
+}
 *{
     margin:0;
     padding:0;

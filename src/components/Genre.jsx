@@ -1,7 +1,7 @@
 
 const Genre = (props) => {
   return (
-    <li className={props.name}>{props.name}</li>
+    <li className={props.name} onClick = {() =>{props.setGenre(props.genreKey)}}>{props.name}</li>
   )
 }
 

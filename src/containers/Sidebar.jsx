@@ -4,14 +4,11 @@ import { useEffect } from 'react'
 const Sidebar = (props) => {
 useEffect( () =>{
 const movieListApiKey ='https://api.themoviedb.org/3/genre/movie/list?api_key=638b33e40e73702eec3c27336ac7870e&language=en-US' 
-if(!localStorage.getItem('movieGenreList')){
+if(!localStorage.getItem('movieGenreObject')){
       fetch(movieListApiKey).then( response => response.json()).then(
-       (result) =>{
-        let movieGenreList =[] 
-        result['genres'].forEach((genre) => {
-          movieGenreList.push(genre['name'])
-        })
-        localStorage.setItem('movieGenreList',JSON.stringify(movieGenreList))
+        (result) =>{
+        console.log(result)
+        localStorage.setItem('movieGenreObject',JSON.stringify(result))
        }
       )
       }
@@ -20,16 +17,17 @@ if(!localStorage.getItem('movieGenreList')){
   return (
     <div className="Sidebar">
         <div className="Header">
-            <h2>Kiwi Films</h2>
+            <h2>Kiwi <span>Films</span></h2>
             <img src="" alt="" /> 
         </div>
     <div className="genreDisplay">
         <ul>
          {
-          JSON.parse(localStorage.getItem('movieGenreList')).map( (genre) =>{
-             return <Genre name = {genre} key ={genre}/>
-         })}           
-        
+           JSON.parse(localStorage.getItem('movieGenreObject'))['genres'].map(
+             (genre) => {
+               return <Genre setGenre ={props.setGenre} name = {genre['name']} genreKey ={genre['id']} key = {genre['id']}/> 
+           })
+         }           
         </ul>
      </div>
     </div>
