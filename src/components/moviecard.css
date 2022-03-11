@@ -10,23 +10,146 @@
 .Moviecard{
     display: flex;
     flex-direction: column;
+
     align-items: center;
+
     background-color: rgba(0, 0, 0, 0.26);
     color: var(--secondary-color);
     font-family: 'Courier New', Courier, monospace;
+
     box-shadow:0rem 2rem 2rem rgba(0, 0, 0, 0.192);
     border-radius: 0.4rem;
     width:var(--card-width);
     height: var(--card-height);
     margin:2rem 2rem  1rem 2rem;
-    overflow: scroll;
-    -ms-overflow-style:none;
-    scrollbar-width: none;
+
+    position: relative;
+    overflow: hidden;
+    
+    animation: zoom-in 2s ease-in-out;
+}
+@keyframes zoom-in{
+   0%{
+    transform: scale(80%);
+    }
+    50%{
+
+        transform: scale(98%);
+    }
+    100%{
+        transform: scale(100%);
+    }
+}
+.Moviecard .Overlay{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: white;
+   color: #22254b; 
+   padding:1rem;
+   position: absolute;
+   bottom:0;
+   left: 0; 
+   right:0; 
+   transform: translateY(120%); 
+   transition: transform 0.3s ease-in-out; 
+
+   width: 100%; 
+   height: 70%;
+   overflow-y: scroll;
+   overflow-wrap: break-word; 
+}
+.Moviecard .VoteDisplay{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right:2rem;
+}
+.Moviecard .Votecount{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:1rem;
+    display: flex;
+    background-color: rgba(255, 0, 0, 0.452);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.Moviecard .VoteAverage{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:1rem;
+    display: flex;
+    background-color: rgba(0, 128, 0, 0.548);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.Moviecard:hover .Overlay{
+    transform: translateY(0%);
+}
+.Moviecard h2{
+    margin-right:2rem;
 }
 .Moviecard img{
     width:var(--card-width);
     height: var(--card-height);
 }
-.Moviecard::-webkit-scrollbar{
+.Moviecard .Overlay::-webkit-scrollbar{
     display: none;
+}
+
+
+.LoadMoreCard{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    color: var(--secondary-color);
+    font-family: 'Courier New', Courier, monospace;
+
+    box-shadow:0rem 2rem 2rem rgba(0, 0, 0, 0.192);
+    border-radius: 0.4rem;
+    width:var(--card-width);
+    height: var(--card-height);
+    margin:2rem 2rem  1rem 2rem;
+
+    position: relative;
+    overflow: hidden;
+    animation: fade-in 3s linear;
+}
+@keyframes fade-in{
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+.LoadMoreCard:hover{
+    cursor: pointer;
+}
+.LoadMoreCard h1{
+   font-size: xx-large;
+   color: rgba(0, 0, 0, 0.404);
+   text-align: center;
+}
+.LoadMoreCard h2{
+   font-size: x-large;
+   color: rgba(0, 0, 0, 0.39);
+   text-align: center;
+}
+@keyframes load-more-animation{
+    0%{
+        font-size:xx-large;
+    }
+    100%{
+        font-size:xx-large;
+    }
 }

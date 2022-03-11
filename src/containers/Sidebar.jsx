@@ -1,18 +1,20 @@
 import './sidebar.css'
 import Genre from '../components/Genre'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 const Sidebar = (props) => {
-useEffect( () =>{
 const movieListApiKey ='https://api.themoviedb.org/3/genre/movie/list?api_key=638b33e40e73702eec3c27336ac7870e&language=en-US' 
-if(!localStorage.getItem('movieGenreObject')){
+const [updateAfterRequest, setUpdateAfterRequest] = useState(null)
+useEffect( () =>{
+  if(!localStorage.getItem('movieGenreObject'))
+     { 
       fetch(movieListApiKey).then( response => response.json()).then(
         (result) =>{
-        console.log(result)
-        localStorage.setItem('movieGenreObject',JSON.stringify(result))
+          localStorage.setItem('movieGenreObject',JSON.stringify(result))
+          setUpdateAfterRequest(true)
        }
       )
       }
-    }
+  }
   ,[])
   return (
     <div className="Sidebar">
@@ -23,10 +25,13 @@ if(!localStorage.getItem('movieGenreObject')){
     <div className="genreDisplay">
         <ul>
          {
+           localStorage.getItem('movieGenreObject') ?
            JSON.parse(localStorage.getItem('movieGenreObject'))['genres'].map(
              (genre) => {
-               return <Genre setGenre ={props.setGenre} name = {genre['name']} genreKey ={genre['id']} key = {genre['id']}/> 
+               return <Genre getGenreData ={props.getGenreData} name = {genre['name']} genreKey ={genre['id']} key = {genre['id']}/> 
            })
+         :
+           null
          }           
         </ul>
      </div>

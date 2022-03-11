@@ -57,7 +57,20 @@
     align-items: center;
     width: 10%;
     height: 50%;
-    background-color: #335C67;
+    background-color: #ee16ad3d;
+}
+.Main .Favorites{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+    box-shadow: 0.1rem 0.1rem 0.4rem rgba(0, 0, 0, 0.103);
+}
+.Main .Favorites:hover{
+    box-shadow:0.1rem 0.1rem 3rem rgba(255, 192, 203, 0.637) ;
 }
 .Main .Favorites h3{
     font-family: Arial, Helvetica, sans-serif;

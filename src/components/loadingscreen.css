@@ -1,0 +1,64 @@
+.LoadingScreen{
+    font-family:Arial, Helvetica, sans-serif ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.LoadingCircle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:2rem solid rgba(0, 211, 248, 0);
+    width:10rem;
+    height:10rem;
+    border-radius: 50%;
+    animation: spin-scale 1s linear infinite;
+}
+.LoadingScreen h2{
+    font-size:2rem;
+    color: rgb(11, 187, 231,0.884);
+    animation:hide 1s linear infinite;
+}
+.LoadingScreen h2{
+    animation: counter-animate 1s linear infinite;
+}
+@keyframes  counter-animate{
+    0%{
+        transform: rotate(-0deg) scale(100%);
+    }
+    50%{
+        transform: rotate(-300deg)scale(100%);
+    }
+    100%{ 
+        transform: rotate(-360deg) scale(100%);
+    }
+}
+@keyframes hide{
+    0%{
+        font-size: 0rem;
+    }
+    50%{
+        font-size:2rem;
+    }
+    100%{
+        color: rgba(0, 153, 255, 0);
+        font-size:1rem;
+    }
+}
+@keyframes spin-scale{
+    0%{
+        border-top:0rem solid rgba(8, 206, 255, 0.884);
+        border-left:0rem solid rgba(11, 187, 231, 0.534);
+        border-right:0rem solid rgba(11, 187, 231, 0.534);
+        border-bottom:0rem solid rgba(11, 187, 231, 0.534);
+        transform: rotate(0deg) scale(100%);
+    }
+    50%{
+        transform: rotate(300deg)scale(90%);
+    }
+    100%{ 
+        transform: rotate(360deg) scale(100%);
+    }
+}

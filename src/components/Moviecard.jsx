@@ -13,23 +13,36 @@ const Moviecard = (props) => {
     props.setModalData(modalData)
     props.toggleModal(true)
   }
-  
+  const sendLoadMoreData = () =>{
+    props.setLoadMoreData(props.loadMore+1)
+  }
   const movie = props.movie
   const title = movie['title']
-  const poster = `${JSON.parse(localStorage.getItem('configData'))['images']['secure_base_url']}original${movie['poster_path']}`
+  const poster = `${JSON.parse(localStorage.getItem('configData'))['images']['secure_base_url']}w500${movie['poster_path']}`
   const description = movie['overview']
   const voteCount = movie['vote_count']
   const voteAverage = movie['vote_average'] 
-    
   return (
-    <div className="Moviecard" onClick={sendModalData}>
+    <div className={movie['title'] ? "Moviecard":'LoadMoreCard'} onClick={movie['title']?sendModalData:sendLoadMoreData}>
+         {
+          movie['title']?
+        <>
         <img src={poster} alt="" />
-        <h2>{title}</h2>
-        <div className="Votedisplay">
+        <div className="Overlay">
+            <h2>{title}</h2>
+            <div className='VoteDisplay'>
+            <div className="VoteAverage">{voteAverage}</div>
             <div className="Votecount">{voteCount}</div>
-            <div className="voteAverage">{voteAverage}</div>
         </div>
-        <p className="Description">{description}</p>
+            <p className="Description">{description}</p>
+        </div>
+        </>
+        :
+          <>
+          <h1>+</h1>
+          <h2>Load More</h2>
+          </>
+        } 
     </div>
   )
 }

@@ -1,7 +1,11 @@
-
+import { useEffect } from "react"
 const Genre = (props) => {
   return (
-    <li className={props.name} onClick = {() =>{props.setGenre(props.genreKey)}}>{props.name}</li>
+    <li className={props.name} onClick = {
+      () =>{
+      props.getGenreData([props.genreKey,props.name]) 
+    }
+    }>{props.name}</li>
   )
 }
 
