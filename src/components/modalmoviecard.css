@@ -7,9 +7,8 @@
 
 }
 .ModalMoviecard{
-    display: flex;
+    display: flex;                                 
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 50%;
     height: 50%;
@@ -26,53 +25,71 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
-.ModalMoviecard .Card .ImageContainer{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction:row ;
-    background-color:var(--main-color);
-    width: 50%;
-    height: 50%;
-    border-radius: 1rem; 
-}
-.ModalMoviecard img{
-  width: 100%;
-  height: 20rem;
-}
-.ModalMoviecard .RatingsContainer{
+.ModalMoviecard .ImageDescription{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin: 1rem;
+    width: 100%;
+    height: 70%;
 }
-.ModalMoviecard .RatingsContainer .Rating{
+.ModalMoviecard .MovieImage{
+    aspect-ratio: 16/9;
+    margin-left:1rem;
+    margin-top:1rem;
+    border-radius:4rem;
+    width: 30%;
+    height: 100%;
+}
+.ModalMoviecard .DescriptionContainer{
+    margin-left:1rem;
+    font-size:x-large;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 128, 0, 0.404);
-    border-radius: 0.4rem;
-    width: 45%;
-    height:100% ;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.ModalMoviecard .DescriptionContainer::-webkit-scrollbar{
+    display: none;
+}
+.ModalMoviecard .RatingsContainer{
+    margin-top:2rem;
+    width: 80%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.ModalMoviecard .RatingsContainer .UserRatings{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 13%;
+    background-color: rgba(5, 126, 25, 0.473);
+    border-radius: 50%;
 }
 .ModalMoviecard .RatingsContainer .VoteCount{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 0, 0, 0.397);
-    border-radius: 0.4rem;
-    width: 45%;
-    height:100% ;
-    
+    height: 70%;
+    width: 13%;
+    background-color: rgba(158, 9, 9, 0.658);
+    border-radius: 50%;
 }
-.ModalMoviecard .DescriptionContainer{
+.ModalMoviecard .RatingsContainer .AddToFavorites{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--secondary-color);
-    color: rgba(0, 0, 0, 0.425);
-    border-radius: 1rem; 
-    min-height: 10rem;
+    height: 40%;
+    width: 20%;
+    background-color: rgba(4, 139, 139, 0.658);
+    border-radius: 3rem;
+}
+.ModalMoviecard .RatingsContainer .AddToFavorites:hover{
+ cursor: pointer;
+ background-color: rgba(2, 80, 80, 0.658);
 }
 
 

@@ -58,6 +58,8 @@
    height: 70%;
    overflow-y: scroll;
    overflow-wrap: break-word; 
+
+   z-index: 1; 
 }
 .Moviecard .VoteDisplay{
     width: 80%;

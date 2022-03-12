@@ -3,14 +3,22 @@ import Loadingscreen from '../components/Loadingscreen'
 import Modal from '../components/Modal'
 import ModalMoviecard from '../components/ModalMoviecard'
 import Moviecard from '../components/Moviecard'
+import Favorites from './Favorites'
 import './main.css'
 
 const Main = (props) => {
+
 const apiKey = '638b33e40e73702eec3c27336ac7870e'
+
 const[modalData,setModalData]=useState(null)
 const[toggleModal,setToggleModal] = useState(false) 
+
 const[movies,setMovies] = useState(props.movies)
 const[loadMore,setLoadMore] = useState(1)
+
+const[favorites,setFavorites] = useState([])
+const[toggleFavorites,setToggleFavorites] = useState(false)
+
 useEffect(
     () =>{
         if(props.genreId && !localStorage.getItem(props.genreName)){
@@ -43,12 +51,10 @@ useEffect(
       const searchByGenreApi = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&vote_count.gte=5&release_date.gte=2000&with_genres=${props.genreId}&page=${loadMore}`
       fetch(searchByGenreApi).then(response => response.json()).then(
         result =>{
-            console.log(result)
             let oldMovieList = movies['results']
             oldMovieList.pop()
             
             let newMovieList = oldMovieList.concat(result['results'])
-            console.log("test")
             newMovieList.push(
                {
                 title:null,
@@ -70,7 +76,6 @@ useEffect(
     }
   } 
   ,[loadMore])
-console.log(typeof(movies));
 return (
     <div className="Main">
         <div className="Header">
@@ -80,12 +85,17 @@ return (
               </div>
             <input type="text" placeholder="Search"></input>
             </div>
-            <div className='Favorites'>
+            <div className='Favorites' onClick={() =>{
+              setToggleFavorites(!toggleFavorites)
+            }}>
                <h3>Favorites</h3>
             </div> 
         </div>
         <div className="Content">
           {
+           toggleFavorites ? <Favorites
+            movies = {favorites}
+           /> :
            movies ? movies['results'].map(
               movie =>{
                 return movie ? 
@@ -104,7 +114,6 @@ return (
             :
               <Loadingscreen/>
           }
-         
         { toggleModal ?
          <Modal toggleModal = {toggleModal} setToggleModal = {setToggleModal}>
           <ModalMoviecard
