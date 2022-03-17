@@ -5,11 +5,7 @@ const FavoriteMoviecard = (props) => {
     const modalData = {
       movie: movie,
       title: movie["title"],
-      poster: `${
-        JSON.parse(localStorage.getItem("configData"))["images"][
-          "secure_base_url"
-        ]
-      }w500${movie["poster_path"]}`,
+      poster: `http://image.tmdb.org/t/p/w500${movie["poster_path"]}`,
       description: movie["overview"],
       voteCount: movie["vote_count"],
       voteAverage: movie["vote_average"],
