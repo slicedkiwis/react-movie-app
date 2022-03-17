@@ -1,0 +1,78 @@
+
+.Main .Header .SearchIconContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 50%;
+    background-color: #ee16ad3d;
+}
+.Main .Header .Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+}
+.Main .Header input{
+    height: 50%;
+    width: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.13);
+    color: var(--secondary-color);
+    border: none;
+
+}
+
+.Main .Header input:focus{
+    outline: none;
+}
+.Main .Header .SearchIcon{
+    background-color: white;
+    height: 50%;
+    width: 5%;
+    display: grid;
+    place-items: center;
+}
+.Main .Header .MovieResults{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-top: 0.2rem solid rgb(255, 251, 0);
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    z-index: 1;
+    overflow: hidden;
+    overflow-y: scroll;
+    transform: translateY(62%);
+    scrollbar-width: none;
+    opacity: 0%;
+    transition: 1.5s ;
+}
+.Main .Container input:hover + .MovieResults {
+    width: 31.5%;
+    height: 20%;
+    opacity: 100%;
+    border-top: 0.5rem solid rgb(7, 38, 97);
+}
+.Main .Container .MovieResults:hover{
+    width: 31.5%;
+    height: 20%;
+    opacity: 100%;
+    border-top: 0.5rem solid rgb(90, 4, 4);
+
+}
+.Main .Header .MovieResults .TitleContainer{
+    height: 2rem;
+}
+.Main .Header .MovieResults .TitleContainer:hover{
+    cursor: pointer;
+    background-color: #335c6757;;
+}
+.Main .Header .MovieResults::-webkit-scrollbar{
+    display: none;
+}

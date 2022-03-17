@@ -46,7 +46,6 @@
    align-items: center;
    background-color: white;
    color: #22254b; 
-   padding:1rem;
    position: absolute;
    bottom:0;
    left: 0; 
@@ -61,13 +60,33 @@
 
    z-index: 1; 
 }
+.Moviecard .OverLayFavorites{
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.192);
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    margin-top:1rem;
+    color: #22254b;
+    background-color: white;
+    height: 2rem;
+    width: 80%;
+    text-align: center;
+}
+.Moviecard .OverLayFavorites:hover{
+    cursor: pointer;
+    background-color: #22254b31;
+}
+.Moviecard .Overlay h2{
+    text-align: center;
+}
+.Moviecard .Overlay p{
+    text-align: center;
+}
 .Moviecard .VoteDisplay{
     width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-right:2rem;
 }
 .Moviecard .Votecount{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

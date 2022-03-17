@@ -9,6 +9,7 @@ const ModalMoviecard = (props) => {
           <p className="Description">{modalData["description"]}</p>
         </div>
       </div>
+
       <div className="RatingsContainer">
         <div className="UserRatings">
           <h2>{modalData["voteAverage"]}</h2>
@@ -16,9 +17,6 @@ const ModalMoviecard = (props) => {
 
         <div className="VoteCount">
           <h2>{modalData["voteCount"]}</h2>
-        </div>
-        <div className="AddToFavorites">
-          <h3>Add To Favorites</h3>
         </div>
       </div>
     </div>

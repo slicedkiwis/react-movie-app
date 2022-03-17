@@ -1,0 +1,14 @@
+.FavoritesPage{
+    width: 100%;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    color: #22254b;
+}
+.FavoritesPage .Container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+

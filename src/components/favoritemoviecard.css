@@ -1,0 +1,15 @@
+.FavoriteMoviecardOverlayFavorites{
+    background-color: white;
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.281);
+    border-radius: 1rem;
+    width: 80%;
+    margin-top:1rem;
+    margin-bottom: 1rem;
+}
+.FavoriteMoviecardOverlayFavorites:hover{
+    cursor: pointer;
+    background-color: #22254b31; ;
+}
+.FavoriteMoviecardOverlayFavorites h3{
+    text-align: center;
+}
