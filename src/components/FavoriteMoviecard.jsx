@@ -29,11 +29,7 @@ const FavoriteMoviecard = (props) => {
   return (
     <div className="Moviecard" onClick={sendModalData}>
       <img
-        src={`${
-          JSON.parse(localStorage.getItem("configData"))["images"][
-            "secure_base_url"
-          ]
-        }w500${movie["poster_path"]}`}
+        src={`http://image.tmdb.org/t/p/w500${["poster_path"]}`}
         alt=""
       />
       <div className="Overlay">

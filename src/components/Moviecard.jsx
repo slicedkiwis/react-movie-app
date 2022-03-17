@@ -3,9 +3,7 @@ import "./moviecard.css";
 const Moviecard = (props) => {
   const movie = props.movie;
   const title = movie["title"];
-  const poster = `${
-    JSON.parse(localStorage.getItem("configData"))["images"]["secure_base_url"]
-  }w500${movie["poster_path"]}`;
+  const poster =`http://image.tmdb.org/t/p/w500${movie["poster_path"]}`
   const description = movie["overview"];
   const voteCount = movie["vote_count"];
   const voteAverage = movie["vote_average"];
